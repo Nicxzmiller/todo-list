@@ -1,10 +1,6 @@
 import React from 'react';
 
 const Todo = (props) => {
-    const todos = props.tasks.map((todo, index) => {
-        return <Todo content={todo} key={index} id={index} onDelete={props.onDelete} />
-    })
-
     return(
         <div className="card-header">
             {props.content}
