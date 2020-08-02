@@ -1,32 +1,19 @@
 import React, {Component} from 'react';
-import './App.css';
-import './Header';
-import Header from "./Header";
-import TodoList from "./TodoList";
-import SubmitForm from "./SubmitFrom";
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import uuid from 'uuid';
 
 class App extends React.Component {
-    state = {
-        tasks: ['task 1', 'task 2', 'task 3', 'task 4']
-    };
-
-    handleDelete = (index) => {
-        const newArr = [...this.state.tasks];
-        newArr.splice(index, 1);
-        this.setState({tasks: newArr});
-    }
-
-    handleSubmit = task => {
-        this.setState({tasks: [...this.state.tasks, task]});
-    }
-
     render(){
         return (
-            <div className="wrapper">
-                <div className="card frame">
-                    <Header numTodos={ this.state.tasks.length }/>
-                    <TodoList tasks={this.state.tasks} onDelete={this.handleDelete}/>
-                    <SubmitForm onFormSubmit={this.handleSubmit}/>
+            <div className="container">
+                <div className="row">
+                    <div className="col-10 mx-auto col-md-8 mt-4">
+                        <h3 className="text-capitalize text-center">Todo List</h3>
+                        <TodoInput/>
+                        <TodoList/>
+                    </div>
                 </div>
             </div>
         );
