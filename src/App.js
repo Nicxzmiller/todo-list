@@ -5,6 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import uuid from 'uuid';
 
 class App extends React.Component {
+    state = {
+        items:[],
+        id:0,
+        item:'',
+        editItem: false
+    }
     render(){
         return (
             <div className="container">
